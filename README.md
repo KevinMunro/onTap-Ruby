@@ -1,4 +1,4 @@
-Manheim project repo for Kevin Munro
+OnTap Ruby repo for Kevin Munro
 
 kevin.munro@orasi.com
 
