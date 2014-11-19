@@ -9,8 +9,8 @@ Feature: Submit New Suggestion
 	  And I navigate to the New Suggestion page
 
 	Scenario: Submit valid suggestion
-	  Given I am on the New Suggestion page
-	  When I submit a valid suggestion
+	  Given I enter a valid suggestion
+	  When I submit a suggestion
 	  Then I should see a success alert appear confirming the suggestion was submitted
 
 	Scenario: Suggestion without title
