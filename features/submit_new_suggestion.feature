@@ -16,10 +16,13 @@ Feature: Submit New Suggestion
 	Scenario: Suggestion without title
 	  Given I fill in only the description field
 	  When I submit a suggestion
-	  Then I should see error alert appear
+	  Then I should see a tooltip error appear
 
 	Scenario: Suggestion without description
 	  Given I fill in only the title field
 	  When I submit a suggestion
-	  Then I should see error alert appear
+	  Then I should see a tooltip error appear
 
+	Scenario: Suggestion with no fields
+	  When I submit a suggestion
+	  Then I should see a tooltip error appear
