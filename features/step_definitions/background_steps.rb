@@ -17,6 +17,6 @@ And(/^I navigate to the New Suggestion page$/) do
 end
 
 And(/^I navigate to the Add New Event page$/) do 
-  navigation_bar.add_new_event_page()
+  navigation_bar.click_add_new_event_button()
 end
 

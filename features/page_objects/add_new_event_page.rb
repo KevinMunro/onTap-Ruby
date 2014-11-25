@@ -15,42 +15,84 @@ class AddNewEventPage < SitePrism::Page
   element :meeting_phone_field, "input#event_meeting_phone_number"
   element :meeting_access_code_field, "input#event_access_code"
   element :event_date_tool, "input#datepicker"
-  element :event_start_time_tool, "label[for=event_event_time] ~ select"
-  element :event_end_time_tool, "label[for=event_end_time] ~ select"
+  element :event_start_time_label, "label[for=event_start]"
+  element :event_end_time_label, "label[for=event_end]"
   element :restricted_checkbox, "label[for=event_restricted]"
   element :submit_button, "input.btn.btn-primary[type=submit]"
 
+
+
+  def fill_new_event_form(data_hsh)
+    data_hsh.each do |key, value|
+      if value == 'Click'
+        send(key)
+      else
+        send(key, value)
+      end
+    end
+  end
+
   def select_event_style(style)
+    event_style_dropdown.select(style)
   end
+
   def set_event_title(title)
+    event_title_field.set(title)
   end
+
   def set_event_description(description)
+    event_description_field.set(description)
   end
+
   def click_add_host_button()
+    add_host_button.click()
   end
+
   def select_event_host(host_name)
+    add_host_dropdown.select(host_name)
   end
+
   def set_event_url_field(url)
+    event_url_field.set(url)
   end
+
   def set_event_host_field(host)
+    event_host_field.set(host)
   end
+
   def click_gotomeeting_checkbox()
+    add_gotomeeting_checkbox.click()
   end
   def set_meeting_url_field(url)
+    meeting_url_field.set(url)
   end
+
   def set_meeting_phone_field(number)
+    meeting_phone_field.set(number)
   end
+
   def set_meeting_access_code(code)
+    meeting_access_code_field.set(code)
   end
+
   def set_date(date)
+    event_date_tool.set(date)
   end
-  def set_start_time(start_time)
+
+  def set_start_time(start_time)   
+    event_start_time_label.first(:xpath,".//..").find("select.ui-timepicker-select").select(start_time)
   end
+
   def set_end_time(end_time)
+    event_end_time_label.first(:xpath,".//..").find("select.ui-timepicker-select").select(end_time)
   end
+
   def click_restricted_checkbox()
+    restricted_checkbox.click()
   end
+
   def click_submit_button()
+    submit_button.click()
   end
 
 end

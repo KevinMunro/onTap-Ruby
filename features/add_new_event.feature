@@ -1,10 +1,10 @@
-@submit_new_suggestion
+@add_new_event
 Feature: Submit New Suggestion
 
 	In order for the user to populate the system with new events, a user
 	should have the ability to submit a event
 
-	Background: Login and navigate to new suggestion page
+	Background: Login and navigate to Add New Event page
 	  Given that I am logged in as an admin
 	  And I navigate to the Add New Event page
 

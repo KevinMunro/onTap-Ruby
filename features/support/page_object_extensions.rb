@@ -15,6 +15,10 @@ module PageObjectHelpers
   def calendar_page
     calendar_page ||= CalendarPage.new
   end
+
+  def add_new_event_page
+    add_new_event_page ||= AddNewEventPage.new
+  end
 end
 
 World(PageObjectHelpers)
