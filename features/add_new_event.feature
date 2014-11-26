@@ -17,4 +17,6 @@ Feature: Submit New Event
             |event_description|
             |lunch_and_learn.yml|
             |lunch_and_learn_restricted.yml|
-
+            |lunch_and_learn_gotomeeting.yml|
+            |webinar.yml|
+            |webinar_restricted.yml|

@@ -63,6 +63,7 @@ class AddNewEventPage < SitePrism::Page
   def click_gotomeeting_checkbox()
     add_gotomeeting_checkbox.click()
   end
+
   def set_meeting_url_field(url)
     meeting_url_field.set(url)
   end
