@@ -19,6 +19,10 @@ module PageObjectHelpers
   def add_new_event_page
     add_new_event_page ||= AddNewEventPage.new
   end
+
+  def jumbotron_page
+    jumbotron_page ||= JumbotronPage.new
+  end
 end
 
 World(PageObjectHelpers)
