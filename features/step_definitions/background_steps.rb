@@ -21,7 +21,9 @@ And(/^I navigate to the Add New Event page$/) do
 end
 
 And(/^there is valid event in the system$/) do 
-  navigation_bar.click_add_new_event_button()
+  jumbotron_page.click_finalize_warning_jumbotron()
+  sleep(3)
+  #navigation_bar.click_add_new_event_button()
   event = YAML.load_file("features/support/Events_To_Delete/lunch_and_learn_to_delete.yml")
     event.each do |key, values|
       add_new_event_page.fill_new_event_form(values)

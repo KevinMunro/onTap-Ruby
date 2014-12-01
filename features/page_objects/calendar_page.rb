@@ -7,14 +7,21 @@ class CalendarPage < SitePrism::Page
 
   def click_delete_event_button_accordion(title)
     page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
-    sleep(2)
     page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/span/a[contains(text(), 'Delete')])").click
   end
 
   def click_edit_event_button_accordion(title)
     page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
-    sleep(2)
     page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/span/a[contains(text(), 'Edit')])").click
   end
 
+  def click_details_event_button_accordion(title)
+    page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
+    page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/a[contains(text(), 'Details')])").click
+  end
+
+  def click_attend_event_button_accordion(title)
+    page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
+    page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/a[contains(text(), 'Attend')])").click
+  end
 end

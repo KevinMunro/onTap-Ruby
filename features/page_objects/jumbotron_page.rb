@@ -1,5 +1,5 @@
 class JumbotronPage < SitePrism::Page
-  element :jumbotron, "div.jumbo-title"
+  element :jumbotron, "div.jumbotron"
 
 
   def is_event_jumbotron(title)
@@ -15,5 +15,21 @@ class JumbotronPage < SitePrism::Page
 
   def click_edit_event_button_jumbotron()
     jumbotron.find(:xpath, "//a[contains(text(), 'Edit')]").click
+  end
+
+  def click_details_event_button_jumbotron()
+    jumbotron.find(:xpath, "//a[contains(text(), 'Details')]").click
+  end
+
+  def click_attend_event_button_jumbotron()
+    jumbotron.find(:xpath, "//a[contains(text(), 'Attend')]").click
+  end
+
+  def click_finalize_well_jumbotron()
+    jumbotron.find("div.well-warning").find("a").click
+  end
+
+  def click_dont_attend_well_jumbotron()
+    jumbotron.find("div.well-success").find("a").click
   end
 end
