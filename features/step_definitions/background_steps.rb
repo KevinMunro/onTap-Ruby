@@ -20,3 +20,10 @@ And(/^I navigate to the Add New Event page$/) do
   navigation_bar.click_add_new_event_button()
 end
 
+And(/^there is valid event in the system$/) do 
+  event = YAML.load_file("features/support/Events_To_Delete/lunch_and_learn_to_delete")
+    event.each do |key, values|
+      add_new_event_page.fill_new_event_form(values)
+    end
+  add_new_event_page.click_submit_button()
+end
