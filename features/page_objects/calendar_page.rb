@@ -24,4 +24,12 @@ class CalendarPage < SitePrism::Page
     page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
     page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/a[contains(text(), 'Attend')])").click
   end
+
+  def click_finalize_well(title)
+
+  end
+
+  def click_dont_attend_well(title)
+
+  end
 end
