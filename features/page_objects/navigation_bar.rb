@@ -16,7 +16,7 @@ class NavigationBar < SitePrism::Page
     add_suggestion.click()
   end
 
-  def click_new_suggestion_button()
+  def click_archive_button()
     archive_link.click()
   end
 
