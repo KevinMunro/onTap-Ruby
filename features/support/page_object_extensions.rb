@@ -23,6 +23,10 @@ module PageObjectHelpers
   def jumbotron_page
     jumbotron_page ||= JumbotronPage.new
   end
+
+  def event_details_page
+    event_details_page ||= EventDetailsPage.new
+  end
 end
 
 World(PageObjectHelpers)

@@ -11,3 +11,8 @@ Feature: Delete event from calendar
 	Scenario: Delete event from calendar
 	  When I click the delete event button on the calendar page
 	  Then I should see a error alert appear confirming the event was deleted
+
+	Scenario: Delete event from jumbotron
+          Given the event to delete is in the jumbotron
+	  When I click the delete event button on the calendar page
+	  Then I should see a error alert appear confirming the event was deleted
