@@ -15,7 +15,11 @@ When(/^I edit the the event$/) do
   add_new_event_page.set_event_title("Edited Event")
 end
 
-And(/^I click the submit button$/) do
+And(/^I click the submit edit button$/) do
+  add_new_event_page.click_update_button()
+end
+
+And(/^I choose to not email attendees updates$/) do
   add_new_event_page.click_submit_button()
 end
 

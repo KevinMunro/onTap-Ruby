@@ -1,9 +1,9 @@
 When(/^I click the attend button$/) do
-  event_title="Java Lunch and Learn To Attend"
+  event_title="Lunch and Learn"
   if jumbotron_page.is_event_jumbotron(event_title)
     jumbotron_page.click_attend_event_button_jumbotron()
   else
-    calendar_page.click_edit_attend_button_accordion()
+    calendar_page.click_attend_event_button_accordion(event_title)
   end
 end
 

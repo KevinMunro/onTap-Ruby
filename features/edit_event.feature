@@ -8,10 +8,11 @@ Feature: Edit Event
 	  Given that I am logged in as an admin
           And there is valid event in the system
 
-	Scenario Outline: Edit event
+	Scenario: Edit event
 	  When I click the edit button
 	  Then I should be brought to the events edit page
           When I edit the the event
-          And I click the submit button
+          And I click the submit edit button
+          And I choose to not email attendees updates
           Then I should see a success alert appear confirming the event was edited
 

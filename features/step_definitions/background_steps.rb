@@ -28,3 +28,12 @@ And(/^there is valid event in the system$/) do
     end
   add_new_event_page.click_submit_button()
 end
+
+And(/^there is valid event in the system to attend $/) do 
+  navigation_bar.click_add_new_event_button()
+  event = YAML.load_file("features/support/Events/lunch_and_learn_to_attend.yml")
+    event.each do |key, values|
+      add_new_event_page.fill_new_event_form(values)
+    end
+  add_new_event_page.click_submit_button()
+end

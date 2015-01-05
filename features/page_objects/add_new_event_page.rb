@@ -14,11 +14,12 @@ class AddNewEventPage < SitePrism::Page
   element :meeting_url_field, "input#event_go_to_meeting_url"
   element :meeting_phone_field, "input#event_meeting_phone_number"
   element :meeting_access_code_field, "input#event_access_code"
-  element :event_date_tool, "input#datepicker"
-  element :event_start_time_label, "label[for=event_start]"
-  element :event_end_time_label, "label[for=event_end]"
+  element :event_date_tool, "input.daydate"
+  element :event_start_time_label, "label[for=event_schedules_attributes_0_start]"
+  element :event_end_time_label, "label[for=event_schedules_attributes_0_end]"
   element :restricted_checkbox, "label[for=event_restricted]"
   element :submit_button, "input.btn.btn-primary[type=submit]"
+  element :update_button, "a[href='#sendEmail']"
 
 
 
@@ -96,4 +97,7 @@ class AddNewEventPage < SitePrism::Page
     submit_button.click()
   end
 
+  def click_update_button()
+    update_button.click()
+  end
 end
