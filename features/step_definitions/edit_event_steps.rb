@@ -8,7 +8,7 @@ When(/^I click the edit button$/) do
 end
 
 Then(/^I should be brought to the events edit page$/) do
-  add_new_event_page.has_event_title_field?
+  add_new_event_page.should has_event_title_field?
 end
 
 When(/^I edit the the event$/) do
@@ -24,7 +24,7 @@ And(/^I choose to not email attendees updates$/) do
 end
 
 Then(/^I should see a success alert appear confirming the event was edited$/) do
-  event_details_page.has_event_succesfully_updated?
+  event_details_page.should has_event_succesfully_updated?
 end
 
 

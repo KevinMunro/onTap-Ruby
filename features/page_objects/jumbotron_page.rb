@@ -25,6 +25,10 @@ class JumbotronPage < SitePrism::Page
     jumbotron.find(:xpath, "//a[contains(text(), 'Attend')]").click
   end
 
+  def click_request_to_attend_event_button_jumbotron()
+    jumbotron.find(:xpath, "//a[contains(text(), 'Request To Attend')]").click
+  end
+
   def click_finalize_well_jumbotron()
     jumbotron.find("div.well-warning").find("a").click
   end

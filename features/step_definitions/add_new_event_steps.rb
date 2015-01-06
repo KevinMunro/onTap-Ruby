@@ -10,5 +10,5 @@ When(/^I submit a event$/) do
 end
 
 Then(/^I should see a success alert appear confirming the event was added$/) do
-  calendar_page.has_event_succesfully_added?
+  calendar_page.should has_event_succesfully_added?
 end

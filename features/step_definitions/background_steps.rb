@@ -29,11 +29,24 @@ And(/^there is valid event in the system$/) do
   add_new_event_page.click_submit_button()
 end
 
-And(/^there is valid event in the system to attend $/) do 
+And(/^there is valid event in the system to attend$/) do 
   navigation_bar.click_add_new_event_button()
-  event = YAML.load_file("features/support/Events/lunch_and_learn_to_attend.yml")
+  event = YAML.load_file("features/support/Events/lunch_and_learn.yml")
     event.each do |key, values|
       add_new_event_page.fill_new_event_form(values)
     end
   add_new_event_page.click_submit_button()
+end
+
+And(/^there is valid restricted event in the system$/) do 
+  navigation_bar.click_add_new_event_button()
+  event = YAML.load_file("features/support/Events/lunch_and_learn_restricted.yml")
+    event.each do |key, values|
+      add_new_event_page.fill_new_event_form(values)
+    end
+  add_new_event_page.click_submit_button()
+end
+
+Given(/^I log out$/) do
+  navigation_bar.click_logout_button()
 end

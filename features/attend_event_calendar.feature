@@ -10,7 +10,7 @@ Feature: Attend Event
 	Scenario: Attend non restricted event
           Given there is valid event in the system to attend
 	  When I click the attend button
-          Then I should see a success alert appear confirming the event was edited
+          Then I should see a success alert appear confirming attendance of event
 
 	Scenario: Request to attend a restricted event approval
           Given there is valid restricted event in the system

@@ -1,6 +1,6 @@
 lunch_and_learn_restricted:
   select_event_style: Lunch And Learn
-  set_event_title: Java Lunch and Learn
+  set_event_title: Java Lunch and Learn Restricted
   set_event_description: Learn the basics of Java programming and how it can be used in your current project
   click_add_host_button: Click
   select_event_host: Kevin Munro
