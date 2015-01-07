@@ -10,5 +10,7 @@ When(/^I submit a event$/) do
 end
 
 Then(/^I should see a success alert appear confirming the event was added$/) do
-  calendar_page.should has_event_succesfully_added?
+  calendar_page.should have_alert_success
+  expect(calendar_page.get_success_flash_text).to have_content(/Event (.*) was created/i)
+#  element :event_succesfully_added, "div[text='/Event (.*) was created /i']"
 end

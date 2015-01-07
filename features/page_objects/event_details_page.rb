@@ -2,6 +2,7 @@ class EventDetailsPage < SitePrism::Page
   element :add_attachment_button, "div[text='Add Attachment']"
   element :finalize_event_button, "input[text='Finalize Event']"
   element :event_succesfully_updated, "div[text='/Event (.*) was updated /i']"
+  element :alert_success, "div.alert-success"
 
   def get_event_attachments_badge_count
 
