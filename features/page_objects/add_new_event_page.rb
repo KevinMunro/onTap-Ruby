@@ -6,8 +6,8 @@ class AddNewEventPage < SitePrism::Page
   element :event_style_dropdown, "select#event_event_style"
   element :event_title_field, "input#event_title"
   element :event_description_field, "input#event_description"
-  element :add_host_button, "button#add-event-host"
-  element :add_host_dropdown, "select#event_hosts"
+  element :add_host_button, "ul.chosen-choices"
+  element :add_host_dropdown, "ul.chosen-results"
   element :event_url_field, "input#event_url"
   element :event_host_field, "input#event_host"
   element :add_gotomeeting_checkbox, "label[for=event_has_GoToMeeting]"
@@ -20,8 +20,6 @@ class AddNewEventPage < SitePrism::Page
   element :restricted_checkbox, "label[for=event_restricted]"
   element :submit_button, "input.btn.btn-primary[type=submit]"
   element :update_button, "a[href='#sendEmail']"
-
-
 
   def fill_new_event_form(data_hsh)
     data_hsh.each do |key, value|
@@ -50,7 +48,8 @@ class AddNewEventPage < SitePrism::Page
   end
 
   def select_event_host(host_name)
-    add_host_dropdown.select(host_name)
+    add_host_button.click()
+    add_host_dropdown.find("li.active-result", :text => host_name).click()
   end
 
   def set_event_url_field(url)
