@@ -1,5 +1,6 @@
 class CalendarPage < SitePrism::Page
   element :alert_success, "div.alert-success"
+  element :alert_danger, "div.alert-danger"
 
   element :suggestion_succesfully_added, "div[text='/Suggestion (.*) was created /i']"
   element :event_succesfully_added, "div[text='/Event (.*) was created /i']"
@@ -39,16 +40,24 @@ class CalendarPage < SitePrism::Page
     return alert_success.text()
   end
 
+  def get_danger_flash_text
+    return alert_danger.text()
+  end
+
   def click_approve_link_in_request_flash
-    request_to_attend_recieved.find("a[text='Approve']").click
+    alert_success.find("a", :text => 'Approve').click()
   end
 
   def click_reject_link_in_request_flash
-
+    alert_success.find("a", :text => 'Reject').click()
   end
 
   def click_details_link_in_request_flash
+    alert_success.find("a", :text => 'Details').click()
+  end
 
+  def click_remove_link_in_flash
+    alert_success.find("a", :text => 'Remove').click()
   end
 
   def click_finalize_well(title)

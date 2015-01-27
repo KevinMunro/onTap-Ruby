@@ -5,15 +5,19 @@ Feature: Attend Event
         should have the ability to attend an event
 
 	Background: Login
-	  Given that I am logged in
+	  Given that I am logged in as an admin
 
 	Scenario: Attend non restricted event
           Given there is valid event in the system to attend
+          Given I log out
+	  Given that I am logged in
 	  When I click the attend button
           Then I should see a success alert appear confirming attendance of event
 
 	Scenario: Request to attend a restricted event approval
           Given there is valid restricted event in the system
+          Given I log out
+	  Given that I am logged in
 	  When I click the request to attend button
           Then I should see a success alert appear confirming a request was generated
           Given I log out
@@ -24,9 +28,13 @@ Feature: Attend Event
           Given I log out
           Given that I am logged in
           Then I should see a success alert saying the attedance request has been approved
+          When I click the remove button on the flash
+          Then I should see no flash alert
           
 	Scenario: Request to attend a restricted event rejection
           Given there is valid restricted event in the system
+          Given I log out
+	  Given that I am logged in
 	  When I click the request to attend button
           Then I should see a success alert appear confirming a request was generated
           Given I log out
@@ -37,3 +45,5 @@ Feature: Attend Event
           Given I log out
           Given that I am logged in
           Then I should see a error alert saying the attedance request has been rejected
+          When I click the remove button on the flash
+          Then I should see no flash alert

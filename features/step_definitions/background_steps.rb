@@ -1,6 +1,6 @@
 Given(/^that I am logged in$/) do
   login_page.goto_page()
-  login_page.set_username('kevin.munro')
+  login_page.set_username('test.user')
   login_page.set_password('password')
   login_page.click_login_button()
 end
@@ -22,9 +22,10 @@ end
 
 And(/^there is valid event in the system$/) do 
   navigation_bar.click_add_new_event_button()
-  event = YAML.load_file("features/support/Events_To_Delete/lunch_and_learn_to_delete.yml")
+  event = YAML.load_file("features/support/Events/lunch_and_learn.yml")
+  @event_values=""
     event.each do |key, values|
-      add_new_event_page.fill_new_event_form(values)
+      @event_values=add_new_event_page.fill_new_event_form(values)
     end
   add_new_event_page.click_submit_button()
 end
@@ -32,8 +33,9 @@ end
 And(/^there is valid event in the system to attend$/) do 
   navigation_bar.click_add_new_event_button()
   event = YAML.load_file("features/support/Events/lunch_and_learn.yml")
+  @event_values=""
     event.each do |key, values|
-      add_new_event_page.fill_new_event_form(values)
+      @event_values=add_new_event_page.fill_new_event_form(values)
     end
   add_new_event_page.click_submit_button()
 end
@@ -41,8 +43,9 @@ end
 And(/^there is valid restricted event in the system$/) do 
   navigation_bar.click_add_new_event_button()
   event = YAML.load_file("features/support/Events/lunch_and_learn_restricted.yml")
+  @event_values=""
     event.each do |key, values|
-      add_new_event_page.fill_new_event_form(values)
+      @event_values=add_new_event_page.fill_new_event_form(values)
     end
   add_new_event_page.click_submit_button()
 end

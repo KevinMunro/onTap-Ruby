@@ -1,8 +1,8 @@
 @delete_event_calendar
 Feature: Delete event from calendar
 
-	In order to remove events fromt he system, a admin
-	should have the ability to delete an event from the 
+	In order to remove events from the system, a admin
+	should have the ability to delete an event from the calendar
 
 	Background: Login
 	  Given that I am logged in as an admin
