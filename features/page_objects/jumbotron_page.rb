@@ -40,4 +40,8 @@ class JumbotronPage < SitePrism::Page
   def get_jumbotron_title
     return jumbotron.find("div.title").text
   end
+
+  def click_refer_a_friend_button_jumbotron()
+    jumbotron.find(:xpath, "//a[contains(text(), 'Refer a Friend')]").click
+  end
 end
