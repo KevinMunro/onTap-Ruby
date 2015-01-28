@@ -1,0 +1,9 @@
+training_class_restricted:
+  select_event_style: Training Class
+  set_event_title: Generate
+  set_event_description: Generate
+  select_event_host: Kevin Munro
+  set_date: Generate
+  set_start_time: Generate
+  set_end_time: Generate
+  click_restricted_checkbox: Click

@@ -36,4 +36,8 @@ class JumbotronPage < SitePrism::Page
   def click_dont_attend_well_jumbotron()
     jumbotron.find("div.well-success").find("a").click
   end
+
+  def get_jumbotron_title
+    return jumbotron.find("div.title").text
+  end
 end

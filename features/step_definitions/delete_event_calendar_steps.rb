@@ -7,9 +7,7 @@ When(/^I click the delete event button on the calendar page$/) do
 end
 
 Then(/^I should see a error alert appear confirming the event was deleted$/) do
-  #calendar_page.should have_alert_danger
   expect(calendar_page).to have_alert_danger
   expect(calendar_page.get_danger_flash_text).to have_content(/Event \"#{@event_values['set_event_title']}\" was deleted/i)
-#  element :event_succesfully_deleted, "div[text='/Event (.*) was deleted /i']"
 end
 

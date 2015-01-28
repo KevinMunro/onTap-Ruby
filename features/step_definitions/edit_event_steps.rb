@@ -8,7 +8,6 @@ end
 
 Then(/^I should be brought to the events edit page$/) do
   expect(add_new_event_page).to have_event_title_field
-  #add_new_event_page.should have_event_title_field
 end
 
 When(/^I edit the the event$/) do
@@ -25,11 +24,8 @@ And(/^I choose to not email attendees updates$/) do
 end
 
 Then(/^I should see a success alert appear confirming the event was edited$/) do
-  #event_details_page.should have_alert_success
   expect(event_details_page).to have_alert_success
   expect(calendar_page.get_success_flash_text).to have_content(/Event \"#{@new_title}\" was updated/i)
-#  element :event_succesfully_updated, "div[text='/Event (.*) was updated /i']"
-
 end
 
 

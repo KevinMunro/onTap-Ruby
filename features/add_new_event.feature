@@ -20,3 +20,6 @@ Feature: Submit New Event
             |lunch_and_learn_gotomeeting.yml|
             |webinar.yml|
             |webinar_restricted.yml|
+            |training_class.yml|
+            |training_class_restricted.yml|
+            |training_class_gotomeeting.yml|
