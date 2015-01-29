@@ -13,3 +13,4 @@ Feature: Edit Profile
           And I click the submit button
 	  Then I should see a success flash saying the profile was edited
           When I click the edit profile button
+	  Then I should see the new values displayed
