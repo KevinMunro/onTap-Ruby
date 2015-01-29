@@ -44,4 +44,8 @@ class JumbotronPage < SitePrism::Page
   def click_refer_a_friend_button_jumbotron()
     jumbotron.find(:xpath, "//a[contains(text(), 'Refer a Friend')]").click
   end
+
+  def click_add_to_calendar_button_jumbotron()
+    jumbotron.find(:xpath, "//a[contains(text(), 'Add To Calendar')]").click
+  end
 end

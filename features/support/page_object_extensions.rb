@@ -27,6 +27,10 @@ module PageObjectHelpers
   def event_details_page
     event_details_page ||= EventDetailsPage.new
   end
+
+  def refer_a_friend_modal
+    refer_a_friend_modal ||= ReferAFriendModal.new
+  end
 end
 
 World(PageObjectHelpers)

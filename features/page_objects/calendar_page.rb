@@ -35,6 +35,11 @@ class CalendarPage < SitePrism::Page
     page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/a[contains(text(), 'Refer a Friend')])").click
   end
 
+  def click_add_to_calendar_button_accordion(title)
+    page.first(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')])").click
+    page.find(:xpath, "(//div[contains(@class, 'title') and contains(text(), '" + title + "')]/../following-sibling::div[1]/a[contains(text(), 'Add To Calendar')])").click
+  end
+
   def get_success_flash_text
     return alert_success.text()
   end

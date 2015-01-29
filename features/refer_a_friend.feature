@@ -18,7 +18,8 @@ Feature: Refer a Friend To Event
           Examples:
             |email_address|
             |test.user@orasi.com|
-
+            |test.user@orasi.com, other.user@orasi.com|
+            |test.user@orasi.com,other.user@orasi.com|
 
 	Scenario Outline: Refer a Friend invalid email
 	  When I click the refer a friend button 
@@ -30,4 +31,10 @@ Feature: Refer a Friend To Event
           Examples:
             |email_address|
             |test.user|
+            |test@orasi.com|
 
+	Scenario: Cancel Referral
+	  When I click the refer a friend button
+	  Then I should see the Refer a Friend Modal
+	  When I click the cancel referral button
+	  Then I should no longer see the Refer a Friend Modal
