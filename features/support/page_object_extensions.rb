@@ -31,6 +31,10 @@ module PageObjectHelpers
   def refer_a_friend_modal
     refer_a_friend_modal ||= ReferAFriendModal.new
   end
+
+  def edit_profile_modal
+    edit_profile_modal ||= EditProfileModal.new
+  end
 end
 
 World(PageObjectHelpers)
