@@ -3,11 +3,11 @@ When(/^I click the edit profile button$/) do
 end
 
 When(/^I edit the profile$/) do
-  #edit_profile_modal.click_profile_vegetarian_button
+  #does not actually edit.  Step included for readability
 end
 
 And(/^I click the submit button$/) do
-  edit_profile.modal.click_profile_submit_button
+  edit_profile_modal.click_profile_submit_button
 end
 
 Then(/^I should see a success flash saying the profile was edited$/) do

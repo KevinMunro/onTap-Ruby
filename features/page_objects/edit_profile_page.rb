@@ -63,5 +63,24 @@ class EditProfileModal < SitePrism::Page
   def click_profile_cancel_button
     profile_cancel_changes_button.click()
   end
+  #how to...get values, random choose from list, if value, rechoose?  seems inefficient
+  #just keep it simple? if vegan, click vegetarian, else click vegan?
+  def profile_force_food_restriction_change
+    if profile_food_vegan_radio.value()
+      profile_food_vegetarian_radio.click()
+      return "vegetarian"
+    else
+      profile_food_vegan_radio.click()
+      return "vegan"
+    end
+  end
 
+  def profile_force_location_change
+
+  end
+
+  def profile_force_notification_setting_change
+    profile_notification_setting.click()
+    return profile_notification_setting.value()
+  end
 end

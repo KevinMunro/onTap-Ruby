@@ -8,6 +8,6 @@ Feature: Send user calendar invite
 	  Given that I am logged in as an admin
           And there is valid event in the system
 
-	Scenario: Delete event from calendar
+	Scenario: Send Calendar Invite
 	  When I click the Add To Calendar button on the calendar page
 	  Then I should see a popup window saying a calendar invite was sent
