@@ -35,6 +35,11 @@ module PageObjectHelpers
   def edit_profile_modal
     edit_profile_modal ||= EditProfileModal.new
   end
+
+  def host_event_request_modal
+    host_event_request_modal ||= HostEventRequestModal.new
+  end
+
 end
 
 World(PageObjectHelpers)

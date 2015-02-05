@@ -150,4 +150,5 @@ class AddNewEventPage < SitePrism::Page
   def click_update_button()
     update_button.click()
   end
+
 end

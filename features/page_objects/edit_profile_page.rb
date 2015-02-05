@@ -1,5 +1,7 @@
 class EditProfileModal < SitePrism::Page
 
+  element :profile_modal_header, "h4.modal-title", :text => 'Edit User Profile'
+
   element :profile_food_vegan_radio, "input#profile_food_pref_vegan"
   element :profile_food_vegetarian_radio, "input#profile_food_pref_vegetarian"
   element :profile_food_gluten_free_radio, "input#profile_food_pref_gluten_free"
@@ -63,10 +65,9 @@ class EditProfileModal < SitePrism::Page
   def click_profile_cancel_button
     profile_cancel_changes_button.click()
   end
-  #how to...get values, random choose from list, if value, rechoose?  seems inefficient
-  #just keep it simple? if vegan, click vegetarian, else click vegan?
+
   def profile_force_food_restriction_change
-    if profile_food_vegan_radio.value()
+    if profile_food_vegan_radio.checked?()
       profile_food_vegetarian_radio.click()
       return "vegetarian"
     else
@@ -76,11 +77,46 @@ class EditProfileModal < SitePrism::Page
   end
 
   def profile_force_location_change
-
+    if profile_location_greensboro_radio.checked?()
+      profile_location_atlanta_radio.click()
+      return "atlanta"
+    else
+      profile_location_greensboro_radio.click()
+      return "greensboro"
+    end
   end
 
   def profile_force_notification_setting_change
     profile_notification_setting.click()
-    return profile_notification_setting.value()
+    return profile_notification_setting.checked?()
   end
+
+  def get_food_restriction_value()
+    if profile_food_vegan_radio.checked?()
+      return "vegan"
+    elsif profile_food_vegetarian_radio.checked?()
+      return "vegetarian"
+    elsif profile_food_gluten_free_radio.checked?()
+      return "gluten free"
+    elsif profile_food_none_radio.checked?()
+      return "none"
+    elsif profile_food_other_radio.checked?()
+      return "other"
+    end
+  end
+
+  def get_location_value()
+    if profile_location_greensboro_radio.checked?()
+      return "greensboro"
+    elsif profile_location_atlanta_radio.checked?()
+      return "atlanta"
+    elsif profile_location_other_radio.checked?()
+      return "other"
+    end
+  end
+
+  def get_notification_value()
+    return profile_notification_setting.checked?()
+  end
+
 end

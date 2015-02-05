@@ -4,6 +4,7 @@ class NavigationBar < SitePrism::Page
   element :add_new_event_page, :xpath, "//a[contains(., 'Add New Event')]"
   element :add_new_lab_link, :xpath, "//a[contains(., 'Add New Lab')]"
   element :view_suggestions_link, :xpath, "//a[contains(., 'View Suggestions')]"
+  element :host_event_link, :xpath, "//a[contains(., 'Host Event')]"
   element :email_ontap_users_link, :xpath, "//a[contains(., 'Email onTap Users')]"
   element :archive_link, :xpath, "//a[contains(., 'Archive')]"
   element :labs_link, :xpath, "//a[contains(., 'Labs')]"
@@ -14,6 +15,10 @@ class NavigationBar < SitePrism::Page
 
   def click_new_suggestion_button()
     add_suggestion.click()
+  end
+
+  def click_host_event_button()
+    host_event_link.click()
   end
 
   def click_archive_button()
