@@ -23,3 +23,27 @@ Feature: Submit New Event
             |training_class.yml|
             |training_class_restricted.yml|
             |training_class_gotomeeting.yml|
+
+	Scenario Outline: Submit invalid webinar, client side validation
+	  Given I enter a invalid <event_description> event
+	  When I submit a event
+          Then the page should display a tool tip asking the user to complete the missing field
+
+          Examples:
+            |event_description|
+
+	Scenario Outline: Submit invalid lunch and learn, client side validation
+	  Given I enter a invalid <event_description> event
+	  When I submit a event
+          Then the page should display a tool tip asking the user to complete the missing field
+
+          Examples:
+            |event_description|
+
+	Scenario Outline: Submit invalid training class, client side validation
+	  Given I enter a invalid <event_description> event
+	  When I submit a event
+          Then the page should display a tool tip asking the user to complete the missing field
+
+          Examples:
+            |event_description|

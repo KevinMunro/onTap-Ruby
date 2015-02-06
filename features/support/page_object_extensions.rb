@@ -40,6 +40,9 @@ module PageObjectHelpers
     host_event_request_modal ||= HostEventRequestModal.new
   end
 
+  def email_ontap_users_modal
+    email_ontap_users_modal ||= EmailOntapUsersModal.new
+  end
 end
 
 World(PageObjectHelpers)
