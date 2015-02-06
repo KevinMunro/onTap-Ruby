@@ -43,12 +43,12 @@ Then(/^I should see a error alert saying the user is not approved to attend$/) d
   expect(calendar_page.get_success_flash_text).to have_content(/(.*) has been rejected from attending event: #{@event_values['set_event_title']}!/i)
 end
 
-Then(/^I should see a success alert saying the attedance request has been approved$/) do
+Then(/^I should see a success alert saying the attendance request has been approved$/) do
   expect(calendar_page).to have_alert_success
   expect(calendar_page.get_success_flash_text).to have_content(/(.*) has approved your request to attend event #{@event_values['set_event_title']}/i)
 end
 #ontap currenty has success, instead of danger flash
-Then(/^I should see a error alert saying the attedance request has been rejected$/) do
+Then(/^I should see a error alert saying the attendance request has been rejected$/) do
   expect(calendar_page).to have_alert_success
   expect(calendar_page.get_success_flash_text).to have_content(/(.*) has rejected your request to attend event #{@event_values['set_event_title']}/i)
 end

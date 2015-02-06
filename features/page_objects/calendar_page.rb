@@ -64,6 +64,10 @@ class CalendarPage < SitePrism::Page
     alert_success.find("a", :text => 'Remove').click()
   end
 
+  def click_add_to_calendar_link_in_flash
+    alert_success.find("a", :text => 'Add To Calendar').click()
+  end
+
   def click_finalize_well(title)
 
   end

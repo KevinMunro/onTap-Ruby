@@ -11,3 +11,14 @@ Then(/^I should see a popup window saying a calendar invite was sent$/) do
   page.driver.browser.switch_to.alert.accept
 end
 
+When(/^I click the Add To Calendar Link in the flash message$/) do
+  calendar_page.click_add_to_calendar_link_in_flash
+end
+
+=begin
+Defintions for the following steps are located in the file attend_event_calendar_steps.rb
+  When I click the attend button
+  Then I should see a success alert appear confirming attendance of event
+
+=end
+
